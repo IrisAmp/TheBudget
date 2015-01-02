@@ -6,4 +6,9 @@
 		<!-- Customize your theme here. -->
 	</style>
 
+    <style name="AppTheme.NoABShadow" parent="AppTheme">
+        <item name="windowContentOverlay">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
 </resources>
