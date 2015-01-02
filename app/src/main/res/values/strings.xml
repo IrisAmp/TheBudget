@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">The Budget</string>
+	<string name="hello_world">Hello world!</string>
+	<string name="action_settings">Settings</string>
+	<string name="action_viewBudget">View The Budget</string>
+	<string name="action_newSemester">New Semester</string>
+	<string name="action_viewArchive">View the Archive</string>
+
+</resources>
