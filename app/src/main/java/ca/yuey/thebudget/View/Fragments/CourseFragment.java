@@ -29,10 +29,6 @@ public class CourseFragment
 	private EditText titleET;
 	private EditText creditsET;
 	private EditText descriptionET;
-	private CheckBox passFailCB;
-	private Button   autoGoalButton;
-	private Spinner  goalSpinner;
-	private EditText goalET;
 
 	public static CourseFragment newInstance( int index )
 	{
@@ -56,18 +52,11 @@ public class CourseFragment
 		titleET = (EditText) v.findViewById( R.id.fragmentCourse_title );
 		creditsET = (EditText) v.findViewById( R.id.fragmentCourse_credits );
 		descriptionET = (EditText) v.findViewById( R.id.fragmentCourse_subtitle );
-		passFailCB = (CheckBox) v.findViewById( R.id.fragmentCourse_goalPassFailCheckbox );
-		autoGoalButton = (Button) v.findViewById( R.id.fragmentCourse_button_autoGoal );
-		goalSpinner = (Spinner) v.findViewById( R.id.fragmentCourse_goalSpinner );
-		goalET = (EditText) v.findViewById( R.id.fragmentCourse_goalEditText );
 	}
 
 	private void setupSpinner()
 	{
-		ArrayAdapter< CharSequence > aryAdapter = ArrayAdapter.createFromResource( this
-				.getActivity(), R.array.grades, android.R.layout.simple_spinner_dropdown_item );
-		aryAdapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-		goalSpinner.setAdapter( aryAdapter );
+
 	}
 
 	@Override

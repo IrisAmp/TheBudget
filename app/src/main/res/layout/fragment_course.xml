@@ -37,103 +37,30 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_margin="@dimen/activity_margin_less"
-		android:hint="Description"
+		android:hint="Enter a description here..."
 		android:id="@+id/fragmentCourse_subtitle"
 		android:inputType="text|textCapSentences|textAutoCorrect"/>
 
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:paddingLeft="@dimen/activity_padding_less"
-		android:paddingRight="@dimen/activity_padding_less"
-		android:paddingTop="@dimen/activity_padding_less"
-		android:text="GOAL"
-		android:textAppearance="?android:attr/textAppearanceSmall"/>
-
-	<LinearLayout
+	<ImageButton
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:id="@+id/imageButton2"
 		android:layout_gravity="center_horizontal"
-		android:layout_marginBottom="@dimen/activity_margin_less"
-		android:layout_marginLeft="@dimen/activity_margin_less"
-		android:layout_marginRight="@dimen/activity_margin_less"
-		android:id="@+id/fragmentCourse_goalLayout"
-		android:orientation="horizontal">
+		android:src="@drawable/ic_collapse_dark"
+		android:background="?android:attr/selectableItemBackground"/>
 
-		<LinearLayout
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_marginLeft="@dimen/activity_margin"
-			android:layout_marginRight="@dimen/activity_margin"
-			android:orientation="vertical">
-
-			<CheckBox
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_gravity="center"
-				android:id="@+id/fragmentCourse_goalPassFailCheckbox"/>
-
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_gravity="center"
-				android:labelFor="@id/fragmentCourse_goalPassFailCheckbox"
-				android:text="PassFail"
-				android:textAppearance="?android:attr/textAppearanceSmall"/>
-
-		</LinearLayout>
-
-		<View
-			android:layout_width="1dp"
-			android:layout_height="match_parent"
-			android:layout_marginBottom="@dimen/activity_margin_less"
-			android:layout_marginTop="@dimen/activity_margin_less"
-			android:background="@android:color/darker_gray"/>
-
-		<Button
-			style="?android:attr/buttonStyleSmall"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_margin="@dimen/activity_margin_less"
-			android:id="@+id/fragmentCourse_button_autoGoal"
-			android:text="AUTO"/>
-
-		<Spinner
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_weight="3"
-			android:id="@+id/fragmentCourse_goalSpinner"/>
-
-		<EditText
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_weight="0"
-			android:ems="2"
-			android:gravity="center"
-			android:hint="4.0"
-			android:id="@+id/fragmentCourse_goalEditText"
-			android:inputType="numberDecimal"/>
-
-	</LinearLayout>
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="@android:color/darker_gray"/>
 
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:labelFor="@id/fragmentCourse_goalLayout"
-		android:paddingLeft="@dimen/activity_padding_less"
-		android:paddingRight="@dimen/activity_padding_less"
+		android:layout_gravity="center"
 		android:paddingTop="@dimen/activity_padding_less"
 		android:text="CONTENT"
 		android:textAppearance="?android:attr/textAppearanceSmall"/>
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
-
-	</LinearLayout>
 
 </LinearLayout>
