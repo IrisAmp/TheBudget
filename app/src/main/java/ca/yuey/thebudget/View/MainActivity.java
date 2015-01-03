@@ -1,6 +1,7 @@
 package ca.yuey.thebudget.View;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -51,7 +52,8 @@ public class MainActivity
 			return true;
 
 		case R.id.action_newSemester:
-			// TODO
+			Intent intent = new Intent( this, ComposeSemesterActivity.class );
+			startActivity( intent );
 			return true;
 
 		case R.id.action_viewArchive:
@@ -73,22 +75,22 @@ public class MainActivity
 		recyclerView = (RecyclerView) findViewById( R.id.main_recyclerView );
 	}
 
-	private void initRecycler()
-	{
-		recyclerView.setHasFixedSize( false ); // Set to true if size is not variable for better performance.
-		recyclerView.setLayoutManager( new LinearLayoutManager( this ) );
-		actionAdapter = new MainActionAdapter( upcomingGradables );
-		recyclerView.setAdapter( actionAdapter );
-	}
-
 	private void createMockGradables()
 	{
-		upcomingGradables = new ArrayList<>(  );
+		upcomingGradables = new ArrayList<>();
 
 		SimpleGradable item = new SimpleGradable();
 		item.setTitle( "Assignment 1" );
 		item.setDesc( "Mock item 1!" );
 
 		upcomingGradables.add( item );
+	}
+
+	private void initRecycler()
+	{
+		recyclerView.setHasFixedSize( false ); // Set to true if size is not variable for better performance.
+		recyclerView.setLayoutManager( new LinearLayoutManager( this ) );
+		actionAdapter = new MainActionAdapter( upcomingGradables );
+		recyclerView.setAdapter( actionAdapter );
 	}
 }

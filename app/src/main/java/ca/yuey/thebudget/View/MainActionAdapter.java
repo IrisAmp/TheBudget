@@ -22,36 +22,8 @@ import ca.yuey.thebudget.R;
  * Created by Yuey on 01/01/2015.
  */
 public class MainActionAdapter
-		extends RecyclerView.Adapter<MainActionAdapter.ViewHolder>
+		extends RecyclerView.Adapter< MainActionAdapter.ViewHolder >
 {
-	public static class ViewHolder
-			extends RecyclerView.ViewHolder
-	{
-		public TextView title;
-		public TextView subtitle;
-		public TextView dueDate;
-		public TextView priority;
-		public TextView itemHint;
-		public SeekBar  entrySeekBar;
-		public EditText entryEditText;
-		public Button   buttonBarEnter;
-		public Button   buttonBarMulligan;
-
-		public ViewHolder( View itemView )
-		{
-			super( itemView );
-			title             = (TextView) itemView.findViewById( R.id.rvMain_cardView_title );
-			subtitle          = (TextView) itemView.findViewById( R.id.rvMain_cardView_subtitle );
-			dueDate           = (TextView) itemView.findViewById( R.id.rvMain_cardView_dueDate );
-			priority          = (TextView) itemView.findViewById( R.id.rvMain_cardView_priority );
-			itemHint          = (TextView) itemView.findViewById( R.id.rvMain_cardView_itemHint );
-			entrySeekBar      = (SeekBar)  itemView.findViewById( R.id.rvMain_cardView_entrySeekBar );
-			entryEditText     = (EditText) itemView.findViewById( R.id.rvMain_cardView_entryEditText );
-			buttonBarEnter    = (Button)   itemView.findViewById( R.id.rvMain_cardView_buttonBar_Enter );
-			buttonBarMulligan = (Button)   itemView.findViewById( R.id.rvMain_cardView_buttonBar_Mulligan );
-		}
-	}
-
 	private ArrayList< Gradable > mData;
 
 	public MainActionAdapter( ArrayList< Gradable > data )
@@ -78,12 +50,14 @@ public class MainActionAdapter
 
 		viewHolder.title.setText( item.getTitle() );
 		viewHolder.subtitle.setText( item.getDesc() );
-		SimpleDateFormat dateFormat = new SimpleDateFormat( "E, LLL d @ h:mm a", Locale.getDefault() );
-		viewHolder.dueDate.setText( "Due: " + dateFormat.format( item.getDue().getTime() ));
+		SimpleDateFormat dateFormat = new SimpleDateFormat( "E, LLL d @ h:mm a", Locale
+				.getDefault() );
+		viewHolder.dueDate.setText( "Due: " + dateFormat.format( item.getDue()
+																	 .getTime() ) );
 		viewHolder.priority.setText( item.getPriority() );
 		viewHolder.itemHint.setText( "You need to ace this item to stay on budget." ); // TODO: FIX
-		linkSeekBarToEntry(viewHolder.entrySeekBar, viewHolder.entryEditText);
-		linkButtonListeners(viewHolder.buttonBarEnter, viewHolder.buttonBarMulligan);
+		linkSeekBarToEntry( viewHolder.entrySeekBar, viewHolder.entryEditText );
+		linkButtonListeners( viewHolder.buttonBarEnter, viewHolder.buttonBarMulligan );
 	}
 
 	@Override
@@ -101,7 +75,7 @@ public class MainActionAdapter
 			@Override
 			public void onProgressChanged( SeekBar seekBar, int progress, boolean fromUser )
 			{
-				if (fromUser)
+				if ( fromUser )
 				{
 					newProgress = progress;
 				}
@@ -120,7 +94,7 @@ public class MainActionAdapter
 			@Override
 			public void onStopTrackingTouch( SeekBar seekBar )
 			{
-				if (newProgress >= 0)
+				if ( newProgress >= 0 )
 					entryEditText.setText( String.valueOf( newProgress ) );
 			}
 		} );
@@ -136,7 +110,7 @@ public class MainActionAdapter
 			@Override
 			public void onTextChanged( CharSequence s, int start, int before, int count )
 			{
-				if (s != null && s.length() != 0)
+				if ( s != null && s.length() != 0 )
 				{
 					entrySeekBar.setProgress( Integer.parseInt( s.toString() ) );
 				}
@@ -173,5 +147,33 @@ public class MainActionAdapter
 				// TODO
 			}
 		} );
+	}
+
+	public static class ViewHolder
+			extends RecyclerView.ViewHolder
+	{
+		public TextView title;
+		public TextView subtitle;
+		public TextView dueDate;
+		public TextView priority;
+		public TextView itemHint;
+		public SeekBar  entrySeekBar;
+		public EditText entryEditText;
+		public Button   buttonBarEnter;
+		public Button   buttonBarMulligan;
+
+		public ViewHolder( View itemView )
+		{
+			super( itemView );
+			title = (TextView) itemView.findViewById( R.id.rvMain_cardView_title );
+			subtitle = (TextView) itemView.findViewById( R.id.rvMain_cardView_subtitle );
+			dueDate = (TextView) itemView.findViewById( R.id.rvMain_cardView_dueDate );
+			priority = (TextView) itemView.findViewById( R.id.rvMain_cardView_priority );
+			itemHint = (TextView) itemView.findViewById( R.id.rvMain_cardView_itemHint );
+			entrySeekBar = (SeekBar) itemView.findViewById( R.id.rvMain_cardView_entrySeekBar );
+			entryEditText = (EditText) itemView.findViewById( R.id.rvMain_cardView_entryEditText );
+			buttonBarEnter = (Button) itemView.findViewById( R.id.rvMain_cardView_buttonBar_Enter );
+			buttonBarMulligan = (Button) itemView.findViewById( R.id.rvMain_cardView_buttonBar_Mulligan );
+		}
 	}
 }

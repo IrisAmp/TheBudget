@@ -1,17 +1,139 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="@dimen/activity_padding"
-    tools:context="ca.yuey.thebudget.CourseFragment">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  xmlns:tools="http://schemas.android.com/tools"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:orientation="vertical"
+			  android:padding="@dimen/activity_padding_less"
+			  tools:context="ca.yuey.thebudget.CourseFragment">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:inputType="text|textCapWords|textAutoCorrect"
-        android:hint="New Course 101"
-        android:id="@+id/editText" />
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
 
-</RelativeLayout>
+		<EditText
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_margin="@dimen/activity_margin_less"
+			android:layout_weight="3"
+			android:hint="New Course 101"
+			android:id="@+id/fragmentCourse_title"
+			android:inputType="text|textCapWords|textAutoCorrect"
+			android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+		<EditText
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_margin="@dimen/activity_margin_less"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:hint="Credits"
+			android:id="@+id/fragmentCourse_credits"
+			android:inputType="number"
+			android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+	</LinearLayout>
+
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/activity_margin_less"
+		android:hint="Description"
+		android:id="@+id/fragmentCourse_subtitle"
+		android:inputType="text|textCapSentences|textAutoCorrect"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingLeft="@dimen/activity_padding_less"
+		android:paddingRight="@dimen/activity_padding_less"
+		android:paddingTop="@dimen/activity_padding_less"
+		android:text="GOAL"
+		android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginBottom="@dimen/activity_margin_less"
+		android:layout_marginLeft="@dimen/activity_margin_less"
+		android:layout_marginRight="@dimen/activity_margin_less"
+		android:id="@+id/fragmentCourse_goalLayout"
+		android:orientation="horizontal">
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginLeft="@dimen/activity_margin"
+			android:layout_marginRight="@dimen/activity_margin"
+			android:orientation="vertical">
+
+			<CheckBox
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:id="@+id/fragmentCourse_goalPassFailCheckbox"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:labelFor="@id/fragmentCourse_goalPassFailCheckbox"
+				android:text="PassFail"
+				android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+		</LinearLayout>
+
+		<View
+			android:layout_width="1dp"
+			android:layout_height="match_parent"
+			android:layout_marginBottom="@dimen/activity_margin_less"
+			android:layout_marginTop="@dimen/activity_margin_less"
+			android:background="@android:color/darker_gray"/>
+
+		<Button
+			style="?android:attr/buttonStyleSmall"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_margin="@dimen/activity_margin_less"
+			android:id="@+id/fragmentCourse_button_autoGoal"
+			android:text="AUTO"/>
+
+		<Spinner
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_weight="3"
+			android:id="@+id/fragmentCourse_goalSpinner"/>
+
+		<EditText
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_weight="0"
+			android:ems="2"
+			android:gravity="center"
+			android:hint="4.0"
+			android:id="@+id/fragmentCourse_goalEditText"
+			android:inputType="numberDecimal"/>
+
+	</LinearLayout>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:labelFor="@id/fragmentCourse_goalLayout"
+		android:paddingLeft="@dimen/activity_padding_less"
+		android:paddingRight="@dimen/activity_padding_less"
+		android:paddingTop="@dimen/activity_padding_less"
+		android:text="CONTENT"
+		android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+	</LinearLayout>
+
+</LinearLayout>

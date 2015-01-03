@@ -2,21 +2,20 @@
 <resources>
 
 	<style name="BlueTheme" parent="android:Theme.Material.Light">
-        <item name="android:colorPrimary">@color/bluePrimary</item>
-        <item name="android:colorPrimaryDark">@color/bluePrimaryDark</item>
+		<item name="android:colorPrimary">@color/bluePrimary</item>
+		<item name="android:colorPrimaryDark">@color/bluePrimaryDark</item>
 	</style>
 
-    <style name="OrangeTheme" parent="android:Theme.Material.Light">
-        <item name="android:colorPrimary">@color/orangePrimary</item>
-        <item name="android:colorPrimaryDark">@color/orangePrimaryDark</item>
-    </style>
+	<style name="OrangeTheme" parent="android:Theme.Material.Light">
+		<item name="android:colorPrimary">@color/orangePrimary</item>
+		<item name="android:colorPrimaryDark">@color/orangePrimaryDark</item>
+	</style>
 
-    <style name="AppTheme" parent="BlueTheme">
+	<style name="AppTheme" parent="BlueTheme">
 
-    </style>
+	</style>
 
-    <style name="AppTheme.NoABShadow" parent="AppTheme">
-        <item name="windowContentOverlay">@null</item>
-        <item name="android:windowContentOverlay">@null</item>
-    </style>
+	<style name="AppTheme.NoABShadow" parent="AppTheme">
+		<item name="android:windowContentOverlay">@null</item>
+	</style>
 </resources>

@@ -9,9 +9,9 @@ import ca.yuey.thebudget.Model.Course;
  * Created by Yuey on 02/01/2015.
  */
 public class SimpleGradable
-	implements Gradable
+		implements Gradable
 {
-	private Course            parent;
+	private Course parent;
 	private String            title    = "Untitled Item";
 	private String            desc     = "";
 	private GregorianCalendar dueDate  = new GregorianCalendar();
@@ -33,7 +33,7 @@ public class SimpleGradable
 	@Override
 	public String getTitle()
 	{
-		return parent.getTitle() + " " + title;
+		return /*parent.getTitle() + " " +*/ title;
 	}
 
 	public void setTitle( String title )
@@ -64,17 +64,6 @@ public class SimpleGradable
 	}
 
 	@Override
-	public String getPriority()
-	{
-		return priority;
-	}
-
-	public void setPriority( String priority )
-	{
-		this.priority = priority;
-	}
-
-	@Override
 	public float getGrade()
 	{
 		return grade;
@@ -89,6 +78,17 @@ public class SimpleGradable
 	public float getMax()
 	{
 		return maxScore;
+	}
+
+	@Override
+	public String getPriority()
+	{
+		return priority;
+	}
+
+	public void setPriority( String priority )
+	{
+		this.priority = priority;
 	}
 
 	public void setMax( float maxScore )
@@ -106,10 +106,11 @@ public class SimpleGradable
 		this.weight = weight;
 	}
 
-
 	@Override
 	public int compareTo( Gradable another )
 	{
 		return this.dueDate.compareTo( another.getDue() );
 	}
+
+
 }

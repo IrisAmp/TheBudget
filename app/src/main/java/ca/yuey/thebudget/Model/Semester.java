@@ -1,6 +1,5 @@
 package ca.yuey.thebudget.Model;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.LinkedHashMap;
 

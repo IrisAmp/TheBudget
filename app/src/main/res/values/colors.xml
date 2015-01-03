@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="bluePrimary">#FF33B5E5</color>
-    <color name="bluePrimaryDark">#FF0099CC</color>
-    <color name="orangePrimary">#FFFFBB33</color>
-    <color name="orangePrimaryDark">#FFFF8800</color>
+	<color name="bluePrimary">#FF33B5E5</color>
+	<color name="bluePrimaryDark">#FF0099CC</color>
+	<color name="orangePrimary">#FFFFBB33</color>
+	<color name="orangePrimaryDark">#FFFF8800</color>
 </resources>
