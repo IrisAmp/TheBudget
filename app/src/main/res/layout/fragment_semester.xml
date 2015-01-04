@@ -1,18 +1,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-				xmlns:tools="http://schemas.android.com/tools"
-				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:padding="@dimen/activity_padding_less"
-				android:orientation="vertical"
-				tools:context="ca.yuey.thebudget.View.SemesterFragment">
+			  xmlns:tools="http://schemas.android.com/tools"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:orientation="vertical"
+			  android:padding="@dimen/activity_padding_less"
+			  tools:context="ca.yuey.thebudget.View.SemesterFragment">
 
 	<EditText
-		android:id="@+id/fragmentSemester_title"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:gravity="center"
 		android:hint="Title"
-		android:textAppearance="?android:attr/textAppearanceLarge"
-		android:gravity="center"/>
+		android:id="@+id/fragmentSemester_title"
+		android:textAppearance="?android:attr/textAppearanceLarge"/>
 
 
 </LinearLayout>

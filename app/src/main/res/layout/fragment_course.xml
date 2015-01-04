@@ -2,6 +2,7 @@
 			  xmlns:tools="http://schemas.android.com/tools"
 			  android:layout_width="match_parent"
 			  android:layout_height="match_parent"
+			  android:animateLayoutChanges="true"
 			  android:orientation="vertical"
 			  android:padding="@dimen/activity_padding_less"
 			  tools:context="ca.yuey.thebudget.CourseFragment">
@@ -33,21 +34,88 @@
 
 	</LinearLayout>
 
-	<EditText
+	<TableLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_margin="@dimen/activity_margin_less"
-		android:hint="Enter a description here..."
-		android:id="@+id/fragmentCourse_subtitle"
-		android:inputType="text|textCapSentences|textAutoCorrect"/>
+		android:layout_gravity="center_horizontal"
+		android:padding="@dimen/activity_padding_less"
+		>
+
+		<EditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:hint="Enter a description here..."
+			android:id="@+id/fragmentCourse_subtitle"
+			android:inputType="text|textCapSentences|textAutoCorrect"
+			android:padding="@dimen/activity_padding_less"/>
+
+		<TableRow
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="vertical"
+			android:padding="@dimen/activity_padding_less">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_column="1"
+				android:layout_gravity="center_vertical"
+				android:layout_weight="1"
+				android:text="Course is Pass / Fail"
+				android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+			<CheckBox
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_column="2"
+				android:layout_gravity="center"
+				android:layout_span="2"
+				android:id="@+id/checkBox"/>
+
+		</TableRow>
+
+		<TableRow
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:padding="@dimen/activity_padding_less">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_column="1"
+				android:layout_gravity="center_vertical"
+				android:layout_weight="1"
+				android:text="Course target grade"
+				android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+			<Spinner
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_column="2"
+				android:gravity="center"
+				android:id="@+id/spinner"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_column="3"
+				android:layout_gravity="center"
+				android:ems="2"
+				android:hint="4.0"
+				android:id="@+id/editText"
+				android:inputType="number"/>
+
+		</TableRow>
+
+	</TableLayout>
 
 	<ImageButton
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/imageButton2"
 		android:layout_gravity="center_horizontal"
-		android:src="@drawable/ic_collapse_dark"
-		android:background="?android:attr/selectableItemBackground"/>
+		android:background="?android:attr/selectableItemBackground"
+		android:id="@+id/imageButton2"
+		android:src="@drawable/ic_collapse_dark"/>
 
 	<View
 		android:layout_width="match_parent"
