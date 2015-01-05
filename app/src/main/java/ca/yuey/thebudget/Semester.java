@@ -1,4 +1,4 @@
-package ca.yuey.thebudget.Model;
+package ca.yuey.thebudget;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -1,8 +1,6 @@
-package ca.yuey.thebudget.Model;
+package ca.yuey.thebudget;
 
 import java.util.ArrayList;
-
-import ca.yuey.thebudget.Model.Gradables.Gradable;
 
 /**
  * Created by Yuey on 01/01/2015.

@@ -1,4 +1,4 @@
-package ca.yuey.thebudget.Auxiliary;
+package ca.yuey.thebudget;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,9 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.List;
-
-import ca.yuey.thebudget.Model.Gradables.Gradable;
-import ca.yuey.thebudget.R;
 
 /**
  * Created by Yuey on 2015-01-05.

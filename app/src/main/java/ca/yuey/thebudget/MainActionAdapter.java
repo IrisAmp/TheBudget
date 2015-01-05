@@ -1,4 +1,4 @@
-package ca.yuey.thebudget.View;
+package ca.yuey.thebudget;
 
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -14,9 +14,6 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Locale;
-
-import ca.yuey.thebudget.Model.Gradables.Gradable;
-import ca.yuey.thebudget.R;
 
 /**
  * Created by Yuey on 01/01/2015.

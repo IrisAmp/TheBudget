@@ -1,4 +1,4 @@
-package ca.yuey.thebudget.Model.Gradables;
+package ca.yuey.thebudget;
 
 import java.util.Calendar;
 

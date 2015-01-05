@@ -1,4 +1,4 @@
-package ca.yuey.thebudget.View;
+package ca.yuey.thebudget;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,12 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
-
-import ca.yuey.thebudget.Model.Course;
-import ca.yuey.thebudget.Model.Semester;
-import ca.yuey.thebudget.R;
-import ca.yuey.thebudget.View.Fragments.CourseFragment;
-import ca.yuey.thebudget.View.Fragments.SemesterFragment;
 
 public class ComposeSemesterActivity
 	extends FragmentActivity

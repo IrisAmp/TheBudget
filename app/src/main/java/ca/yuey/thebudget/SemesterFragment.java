@@ -1,4 +1,4 @@
-package ca.yuey.thebudget.View.Fragments;
+package ca.yuey.thebudget;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,9 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import ca.yuey.thebudget.Model.Semester;
-import ca.yuey.thebudget.R;
 
 /**
  * Created by Yuey on 03/01/2015.

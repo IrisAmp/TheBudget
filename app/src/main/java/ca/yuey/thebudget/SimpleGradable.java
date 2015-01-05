@@ -1,9 +1,7 @@
-package ca.yuey.thebudget.Model.Gradables;
+package ca.yuey.thebudget;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-
-import ca.yuey.thebudget.Model.Course;
 
 /**
  * Created by Yuey on 02/01/2015.

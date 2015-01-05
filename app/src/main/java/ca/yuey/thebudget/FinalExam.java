@@ -1,6 +1,4 @@
-package ca.yuey.thebudget.Model.Gradables;
-
-import ca.yuey.thebudget.Model.Course;
+package ca.yuey.thebudget;
 
 /**
  * Created by Yuey on 2015-01-05.

@@ -1,4 +1,4 @@
-package ca.yuey.thebudget.View.Fragments;
+package ca.yuey.thebudget;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,11 +14,6 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TableLayout;
-
-import ca.yuey.thebudget.Auxiliary.CourseContentArrayAdapter;
-import ca.yuey.thebudget.Model.Course;
-import ca.yuey.thebudget.Model.Gradables.FinalExam;
-import ca.yuey.thebudget.R;
 
 /**
  * Created by Yuey on 03/01/2015.
@@ -86,14 +81,14 @@ public class CourseFragment
                 if (detailVisibility == View.VISIBLE)
                 {
                     CourseFragment.this.toggleDetailButton.setImageResource( R.drawable.ic_expand_dark );
-                    CourseFragment.this.detailTable.setVisibility( View.GONE );
-                    CourseFragment.this.workLV.setVisibility( View.VISIBLE );
+                    CourseFragment.this.detailTable.setVisibility(View.GONE);
+                    CourseFragment.this.workLV.setVisibility(View.VISIBLE);
                 }
                 else
                 {
                     CourseFragment.this.workLV.setVisibility( View.GONE );
-                    CourseFragment.this.detailTable.setVisibility( View.VISIBLE );
-                    CourseFragment.this.toggleDetailButton.setImageResource( R.drawable.ic_collapse_dark );
+                    CourseFragment.this.detailTable.setVisibility(View.VISIBLE);
+                    CourseFragment.this.toggleDetailButton.setImageResource(R.drawable.ic_collapse_dark);
                 }
             }
         } );

@@ -1,4 +1,4 @@
-package ca.yuey.thebudget.Auxiliary;
+package ca.yuey.thebudget;
 
 import android.content.Context;
 import android.net.Uri;

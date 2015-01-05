@@ -7,4 +7,6 @@
 	android:gravity="center"
 	android:padding="@dimen/activity_padding_less"
 	android:singleLine="true"
-	android:textAlignment="center"/>
+	android:textAlignment="center"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:drawableEnd="@drawable/ic_expand_dark"/>
