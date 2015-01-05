@@ -37,4 +37,9 @@ public class Course
 	{
 		this.disc = disc;
 	}
+
+    public ArrayList< Gradable > getContent()
+    {
+        return this.content;
+    }
 }

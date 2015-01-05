@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/composeSemester_strip_prevButton"
+        android:padding="@dimen/activity_padding_less"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_previous_item_dark" />
+
+    <Spinner
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/composeSemester_strip_spinner"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:spinnerMode="dropdown" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/composeSemester_strip_nextButton"
+        android:padding="@dimen/activity_padding_less"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_next_item_dark" />
+
+</LinearLayout>

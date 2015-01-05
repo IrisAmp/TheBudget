@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 
+import ca.yuey.thebudget.Model.Course;
 import ca.yuey.thebudget.Model.Gradables.Gradable;
 import ca.yuey.thebudget.Model.Gradables.SimpleGradable;
 import ca.yuey.thebudget.R;
@@ -79,7 +80,7 @@ public class MainActivity
 	{
 		upcomingGradables = new ArrayList<>();
 
-		SimpleGradable item = new SimpleGradable();
+		SimpleGradable item = new SimpleGradable( new Course() );
 		item.setTitle( "Assignment 1" );
 		item.setDesc( "Mock item 1!" );
 

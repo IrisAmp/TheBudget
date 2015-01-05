@@ -1,6 +1,7 @@
 package ca.yuey.thebudget.Model;
 
-import java.util.Calendar;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedHashMap;
 
 /**
@@ -14,10 +15,8 @@ public class Semester
 
 	public Semester()
 	{
-		title = Calendar.getInstance().get( Calendar.MONTH )
-				+ " " +
-				Calendar.getInstance().get( Calendar.YEAR )
-				+ " Semester";
+        SimpleDateFormat df = new SimpleDateFormat("MMMMM yyyy");
+		title = df.format( new Date() ) + " Semester";
 	}
 
 	public String getTitle()

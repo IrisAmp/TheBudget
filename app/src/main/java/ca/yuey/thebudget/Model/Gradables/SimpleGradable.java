@@ -11,14 +11,19 @@ import ca.yuey.thebudget.Model.Course;
 public class SimpleGradable
 		implements Gradable
 {
-	private Course parent;
-	private String            title    = "Untitled Item";
-	private String            desc     = "";
-	private GregorianCalendar dueDate  = new GregorianCalendar();
-	private String            priority = "";
-	private float             grade    = 0;
-	private float             maxScore = 0;
-	private float             weight   = 0;
+	protected Course parent;
+	protected String            title    = "Untitled Item";
+	protected String            desc     = "";
+	protected GregorianCalendar dueDate  = new GregorianCalendar();
+	protected String            priority = "";
+	protected float             grade    = 0;
+	protected float             maxScore = 0;
+	protected float             weight   = 0;
+
+    public SimpleGradable(Course parent)
+    {
+
+    }
 
 	public Course getParent()
 	{
