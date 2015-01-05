@@ -9,6 +9,7 @@
 	<string name="action_viewArchive">View the Archive</string>
 	<string name="title_activity_compose_semester">Compose Semester</string>
 	<string name="hello_blank_fragment">Hello blank fragment</string>
+
 	<string-array name="grades">
 		<item>A+</item>
 		<item>A</item>
@@ -22,6 +23,13 @@
 		<item>D+</item>
 		<item>D</item>
 		<item>F</item>
+	</string-array>
+	<string-array name="priorities">
+		<item>0: Critical</item>
+		<item>1: High</item>
+		<item>2: Normal</item>
+		<item>3: Low</item>
+		<item>4: Trivial</item>
 	</string-array>
 
 </resources>

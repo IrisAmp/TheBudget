@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import ca.yuey.thebudget.Model.Semester;
 import ca.yuey.thebudget.R;
 
 /**
@@ -15,7 +16,7 @@ import ca.yuey.thebudget.R;
 public class SemesterFragment
 		extends Fragment
 {
-	public static SemesterFragment newInstance()
+	public static SemesterFragment newInstance( Semester semester )
 	{
 		SemesterFragment result = new SemesterFragment();
 		return result;

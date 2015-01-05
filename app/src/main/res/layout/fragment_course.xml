@@ -34,43 +34,78 @@
 
 	</LinearLayout>
 
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="@android:color/darker_gray"/>
+
 	<TableLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_gravity="center_horizontal"
+		android:id="@+id/fragmentCourse_detailTable"
 		android:padding="@dimen/activity_padding_less"
-		>
+		android:stretchColumns="2">
+
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="horizontal">
+
+			<Button
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="?android:attr/selectableItemBackground"
+				android:id="@+id/fragmentCourse_autoTarget"
+				android:text="Auto Target"/>
+
+			<View
+				android:layout_width="1dp"
+				android:layout_height="match_parent"
+				android:layout_margin="@dimen/activity_margin_less"
+				android:background="@android:color/darker_gray"/>
+
+
+			<Button
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="?android:attr/selectableItemBackground"
+				android:id="@+id/fragmentCourse_RemoveCourse"
+				android:text="Delete Course"/>
+
+		</LinearLayout>
 
 		<EditText
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:layout_margin="@dimen/activity_margin_less"
 			android:hint="Enter a description here..."
-			android:id="@+id/fragmentCourse_subtitle"
-			android:inputType="text|textCapSentences|textAutoCorrect"
-			android:padding="@dimen/activity_padding_less"/>
+			android:id="@+id/fragmentCourse_desc"
+			android:inputType="text|textCapSentences|textAutoCorrect"/>
+
 
 		<TableRow
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
-			android:orientation="vertical"
 			android:padding="@dimen/activity_padding_less">
 
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_column="1"
-				android:layout_gravity="center_vertical"
-				android:layout_weight="1"
+				android:layout_gravity="center"
 				android:text="Course is Pass / Fail"
 				android:textAppearance="?android:attr/textAppearanceMedium"/>
 
 			<CheckBox
-				android:layout_width="match_parent"
+				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_column="2"
 				android:layout_gravity="center"
-				android:layout_span="2"
-				android:id="@+id/checkBox"/>
+				android:id="@+id/fragmentCourse_passFailCheckBox"/>
 
 		</TableRow>
 
@@ -84,7 +119,6 @@
 				android:layout_height="wrap_content"
 				android:layout_column="1"
 				android:layout_gravity="center_vertical"
-				android:layout_weight="1"
 				android:text="Course target grade"
 				android:textAppearance="?android:attr/textAppearanceMedium"/>
 
@@ -93,17 +127,35 @@
 				android:layout_height="wrap_content"
 				android:layout_column="2"
 				android:gravity="center"
-				android:id="@+id/spinner"/>
+				android:paddingRight="@dimen/activity_padding_less"
+				android:paddingLeft="@dimen/activity_padding_less"
+				android:id="@+id/fragmentCourse_gradeSpinner"
+				android:textAlignment="center"/>
 
-			<EditText
-				android:layout_width="wrap_content"
+		</TableRow>
+
+		<TableRow
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:padding="@dimen/activity_padding_less">
+
+			<TextView
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_column="3"
-				android:layout_gravity="center"
-				android:ems="2"
-				android:hint="4.0"
-				android:id="@+id/editText"
-				android:inputType="number"/>
+				android:layout_column="1"
+				android:layout_gravity="center_vertical"
+				android:text="Priority"
+				android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+			<Spinner
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_column="2"
+				android:gravity="center"
+				android:id="@+id/fragmentCourse_prioritySpinner"
+				android:paddingRight="@dimen/activity_padding_less"
+				android:paddingLeft="@dimen/activity_padding_less"
+				android:textAlignment="center"/>
 
 		</TableRow>
 
@@ -114,7 +166,7 @@
 		android:layout_height="wrap_content"
 		android:layout_gravity="center_horizontal"
 		android:background="?android:attr/selectableItemBackground"
-		android:id="@+id/imageButton2"
+		android:id="@+id/fragmentCourse_toggleDetailButton"
 		android:src="@drawable/ic_collapse_dark"/>
 
 	<View
@@ -127,8 +179,15 @@
 		android:layout_height="wrap_content"
 		android:layout_gravity="center"
 		android:paddingTop="@dimen/activity_padding_less"
-		android:text="CONTENT"
+		android:text="COURSE WORK"
 		android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+	<ListView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_gravity="center_horizontal"
+		android:id="@+id/fragmentCourse_workListView"
+		tools:listitem="@layout/listitem_coursecontent"/>
 
 
 </LinearLayout>

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.view.ViewPager
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:id="@+id/composeSemester_viewPager"
-	android:theme="@style/AppTheme.NoABShadow">
+	android:theme="@style/AppTheme.NoABShadow"
+	tools:layout="@layout/fragment_course">
 
 	<android.support.v4.view.PagerTabStrip
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/composeSemester_pagerTabStrip"
-		/>
+		android:id="@+id/composeSemester_pagerTabStrip"/>
 
 </android.support.v4.view.ViewPager>
