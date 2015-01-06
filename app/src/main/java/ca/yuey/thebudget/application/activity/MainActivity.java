@@ -1,4 +1,4 @@
-package ca.yuey.thebudget;
+package ca.yuey.thebudget.application.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
+
+import ca.yuey.thebudget.application.adapter.MainActionAdapter;
+import ca.yuey.thebudget.R;
+import ca.yuey.thebudget.data.Course;
+import ca.yuey.thebudget.data.Gradable;
+import ca.yuey.thebudget.data.SimpleGradable;
 
 
 public class MainActivity

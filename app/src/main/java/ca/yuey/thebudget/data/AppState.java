@@ -1,4 +1,4 @@
-package ca.yuey.thebudget;
+package ca.yuey.thebudget.data;
 
 import android.content.Context;
 

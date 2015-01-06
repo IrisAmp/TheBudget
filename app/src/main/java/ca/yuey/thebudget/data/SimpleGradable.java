@@ -1,4 +1,4 @@
-package ca.yuey.thebudget;
+package ca.yuey.thebudget.data;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -9,19 +9,19 @@ import java.util.GregorianCalendar;
 public class SimpleGradable
 		implements Gradable
 {
-	protected Course parent;
-	protected String            title    = "Untitled Item";
-	protected String            desc     = "";
-	protected GregorianCalendar dueDate  = new GregorianCalendar();
-	protected String            priority = "";
-	protected float             grade    = 0;
-	protected float             maxScore = 0;
-	protected float             weight   = 0;
+	protected Course   parent;
+	protected String   title    = "Untitled Item";
+	protected String   desc     = "";
+	protected Calendar dueDate  = Calendar.getInstance();
+	protected String   priority = "";
+	protected float    grade    = 0;
+	protected float    maxScore = 0;
+	protected float    weight   = 0;
 
-    public SimpleGradable(Course parent)
-    {
-
-    }
+	public SimpleGradable( Course parent )
+	{
+		this.parent = parent;
+	}
 
 	public Course getParent()
 	{
@@ -36,7 +36,7 @@ public class SimpleGradable
 	@Override
 	public String getTitle()
 	{
-		return /*parent.getTitle() + " " +*/ title;
+		return parent.getTitle() + " " + title;
 	}
 
 	public void setTitle( String title )
@@ -61,7 +61,7 @@ public class SimpleGradable
 		return dueDate;
 	}
 
-	public void setDue( GregorianCalendar dueDate )
+	public void setDue( Calendar dueDate )
 	{
 		this.dueDate = dueDate;
 	}

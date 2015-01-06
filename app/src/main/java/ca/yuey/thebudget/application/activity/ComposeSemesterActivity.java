@@ -1,4 +1,4 @@
-package ca.yuey.thebudget;
+package ca.yuey.thebudget.application.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,11 +11,17 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 
+import ca.yuey.thebudget.application.fragment.CourseFragment;
+import ca.yuey.thebudget.R;
+import ca.yuey.thebudget.application.fragment.SemesterFragment;
+import ca.yuey.thebudget.data.Course;
+import ca.yuey.thebudget.data.Semester;
+
 public class ComposeSemesterActivity
 	extends FragmentActivity
 {
-	private PagerAdapter    adapter;
-	private ViewPager       pager;
+	private PagerAdapter adapter;
+	private ViewPager    pager;
 
 	private Semester            semester = new Semester();
 	private ArrayList< Course > courses  = new ArrayList<>();

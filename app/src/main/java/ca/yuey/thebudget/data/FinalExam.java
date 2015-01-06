@@ -1,4 +1,4 @@
-package ca.yuey.thebudget;
+package ca.yuey.thebudget.data;
 
 /**
  * Created by Yuey on 2015-01-05.

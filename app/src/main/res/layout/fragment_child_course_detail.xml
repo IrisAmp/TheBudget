@@ -1,0 +1,85 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:padding="@dimen/activity_padding_less">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<EditText
+			android:id="@+id/fragment_courseDetail_description"
+			android:layout_margin="@dimen/activity_margin_less"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:inputType="text|textAutoCorrect|textCapSentences"
+			android:hint="Enter a description..."/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/activity_padding_less">
+
+			<TextView
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="2"
+				android:text="Course is Pass / Fail"
+				android:layout_gravity="center"
+				android:padding="@dimen/activity_padding_less"/>
+
+			<ToggleButton
+				android:id="@+id/fragment_courseDetail_passFailButton"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:checked="false"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/activity_padding_less">
+
+			<TextView
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="2"
+				android:text="Target grade"
+				android:layout_gravity="center"
+				android:padding="@dimen/activity_padding_less"/>
+
+			<Spinner
+				android:id="@+id/fragment_courseDetail_targetGradeSpinner"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/activity_padding_less">
+
+			<TextView
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="2"
+				android:text="Priority"
+				android:layout_gravity="center"
+				android:padding="@dimen/activity_padding_less"/>
+
+			<Spinner
+				android:id="@+id/fragment_courseDetail_prioritySpinner"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</ScrollView>

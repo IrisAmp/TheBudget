@@ -1,6 +1,8 @@
-package ca.yuey.thebudget;
+package ca.yuey.thebudget.data;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  * Created by Yuey on 01/01/2015.
@@ -14,6 +16,18 @@ public class Course
 	public Course()
 	{
 		title = "New Course";
+		generateContent();
+	}
+
+	private void generateContent()
+	{
+		SimpleGradable exam = new SimpleGradable( this );
+		exam.setTitle( "Final Exam" );
+		exam.setWeight( 0.50f );
+		exam.setMax( 100.f );
+		exam.setDue( GregorianCalendar.getInstance() );
+
+		SimpleGradable midterm = new SimpleGradable( this );
 	}
 
 	public String getTitle()
@@ -36,8 +50,8 @@ public class Course
 		this.disc = disc;
 	}
 
-    public ArrayList< Gradable > getContent()
-    {
-        return this.content;
-    }
+	public ArrayList< Gradable > getContent()
+	{
+		return this.content;
+	}
 }

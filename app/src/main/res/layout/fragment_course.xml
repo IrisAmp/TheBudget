@@ -1,199 +1,97 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
-    android:orientation="vertical"
-    android:paddingTop="@dimen/activity_padding_less"
-    android:paddingLeft="@dimen/activity_padding_less"
-    android:paddingRight="@dimen/activity_padding_less"
-    tools:context="ca.yuey.thebudget.CourseFragment">
+			  xmlns:tools="http://schemas.android.com/tools"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:animateLayoutChanges="true"
+			  android:orientation="vertical"
+			  tools:context="ca.yuey.thebudget.application.fragment.CourseFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingTop="@dimen/activity_padding_less"
+		android:paddingLeft="@dimen/activity_padding_less"
+		android:paddingRight="@dimen/activity_padding_less">
 
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/activity_margin_less"
-            android:layout_weight="3"
-            android:hint="New Course 101"
-            android:id="@+id/fragmentCourse_title"
-            android:inputType="text|textCapWords|textAutoCorrect"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+		<EditText
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_margin="@dimen/activity_margin_less"
+			android:layout_weight="3"
+			android:hint="New Course 101"
+			android:id="@+id/fragment_course_title"
+			android:inputType="text|textCapWords|textAutoCorrect"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:nextFocusForward="@+id/fragment_course_credits"/>
 
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/activity_margin_less"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:hint="Credits"
-            android:id="@+id/fragmentCourse_credits"
-            android:inputType="number"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+		<EditText
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_margin="@dimen/activity_margin_less"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:hint="Credits"
+			android:id="@+id/fragment_course_credits"
+			android:inputType="number"
+			android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-    </LinearLayout>
+	</LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/fragmentCourse_detailTable"
-        android:padding="@dimen/activity_padding_less"
-        android:stretchColumns="2">
+		<Button
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:background="?android:attr/selectableItemBackground"
+			android:id="@+id/fragment_course_detailsButton"
+			android:text="Details"/>
 
+		<View
+			android:layout_width="1dp"
+			android:layout_height="match_parent"
+			android:layout_margin="@dimen/activity_margin_less"
+			android:background="@android:color/darker_gray"/>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="horizontal">
+		<Button
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:background="?android:attr/selectableItemBackground"
+			android:id="@+id/fragment_course_contentButton"
+			android:text="Content"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:id="@+id/fragmentCourse_autoTarget"
-                android:text="Auto Target" />
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_margin_less"
-                android:background="@android:color/darker_gray" />
-
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackground"
-                android:id="@+id/fragmentCourse_RemoveCourse"
-                android:text="Delete Course" />
-
-        </LinearLayout>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/activity_margin_less"
-            android:hint="Enter a description here..."
-            android:id="@+id/fragmentCourse_desc"
-            android:inputType="text|textCapSentences|textAutoCorrect" />
+		<View
+			android:layout_width="1dp"
+			android:layout_height="match_parent"
+			android:layout_margin="@dimen/activity_margin_less"
+			android:background="@android:color/darker_gray"/>
 
 
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:padding="@dimen/activity_padding_less">
+		<Button
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:background="?android:attr/selectableItemBackground"
+			android:id="@+id/fragment_course_gradesButton"
+			android:text="Grades"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_gravity="center"
-                android:text="Course is Pass / Fail"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+	</LinearLayout>
 
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="2"
-                android:layout_gravity="center"
-                android:id="@+id/fragmentCourse_passFailCheckBox" />
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="@android:color/darker_gray"/>
 
-        </TableRow>
+	<FrameLayout
+		android:id="@+id/fragment_course_frame"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
 
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:padding="@dimen/activity_padding_less">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_gravity="center_vertical"
-                android:text="Course target grade"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="2"
-                android:gravity="center"
-                android:paddingRight="@dimen/activity_padding_less"
-                android:paddingLeft="@dimen/activity_padding_less"
-                android:id="@+id/fragmentCourse_gradeSpinner"
-                android:textAlignment="center" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:padding="@dimen/activity_padding_less">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_gravity="center_vertical"
-                android:text="Priority"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="2"
-                android:gravity="center"
-                android:id="@+id/fragmentCourse_prioritySpinner"
-                android:paddingRight="@dimen/activity_padding_less"
-                android:paddingLeft="@dimen/activity_padding_less"
-                android:textAlignment="center" />
-
-        </TableRow>
-
-    </TableLayout>
-
-    <ImageButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="?android:attr/selectableItemBackground"
-        android:id="@+id/fragmentCourse_toggleDetailButton"
-        android:src="@drawable/ic_collapse_dark" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:paddingTop="@dimen/activity_padding_less"
-        android:text="COURSE WORK"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/fragmentCourse_workListView"
-        android:divider="@null"
-        android:dividerHeight="@dimen/activity_margin"
-        android:padding="@dimen/activity_padding"
-        android:clipToPadding="false"
-        tools:listitem="@layout/listitem_coursecontent" />
-
+	</FrameLayout>
 
 </LinearLayout>
