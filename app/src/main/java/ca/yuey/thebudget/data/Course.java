@@ -11,7 +11,7 @@ public class Course
 {
 	private String                title   = "";
 	private String                disc    = "";
-	private ArrayList< Gradable > content = new ArrayList< Gradable >();
+	private ArrayList< Gradable > content = new ArrayList<  >();
 
 	public Course()
 	{
@@ -25,9 +25,26 @@ public class Course
 		exam.setTitle( "Final Exam" );
 		exam.setWeight( 0.50f );
 		exam.setMax( 100.f );
-		exam.setDue( GregorianCalendar.getInstance() );
+        Calendar examDate = GregorianCalendar.getInstance(); examDate.add( Calendar.MONTH, 3 );
+		exam.setDue( examDate );
 
 		SimpleGradable midterm = new SimpleGradable( this );
+        midterm.setTitle( "Midterm" );
+        midterm.setWeight( 0.30f );
+        midterm.setMax( 50.f );
+        Calendar mtDate = GregorianCalendar.getInstance(); mtDate.add( Calendar.MONTH, 2 );
+        midterm.setDue( mtDate );
+
+        SimpleGradable assignment = new SimpleGradable( this );
+        assignment.setTitle( "Midterm" );
+        assignment.setWeight( 0.20f );
+        assignment.setMax( 20.f );
+        Calendar assignmentDate = GregorianCalendar.getInstance(); mtDate.add( Calendar.MONTH, 1 );
+        assignment.setDue( assignmentDate );
+
+        content.add( exam );
+        content.add( midterm );
+        content.add( assignment );
 	}
 
 	public String getTitle()
@@ -55,3 +72,4 @@ public class Course
 		return this.content;
 	}
 }
+

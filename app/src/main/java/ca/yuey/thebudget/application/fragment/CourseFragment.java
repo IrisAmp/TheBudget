@@ -18,7 +18,7 @@ import ca.yuey.thebudget.data.Course;
  */
 
 public class CourseFragment
-		extends Fragment
+	    extends Fragment
 {
 	private Course course;
 
@@ -28,6 +28,8 @@ public class CourseFragment
 	private Button      contentButton;
 	private Button      gradesButton;
 	private FrameLayout frameLayout;
+
+    private int currentTab;
 
 	public static CourseFragment newInstance( Course course )
 	{
@@ -45,15 +47,22 @@ public class CourseFragment
 
 		getLayoutHandles( resultView );
 		setupButtons();
-
-		getChildFragmentManager().beginTransaction()
-								 .add( R.id.fragment_course_frame,
-									   CourseDetailChildFragment.newInstance() );
+        initFrame();
 
 		return resultView;
 	}
 
-	private void getLayoutHandles( View v )
+    private void initFrame()
+    {
+        getChildFragmentManager()
+            .beginTransaction()
+            .add( R.id.fragment_course_frame,
+                  CourseDetailChildFragment.newInstance() )
+            .commit();
+        currentTab = R.layout.fragment_child_course_detail;
+    }
+
+    private void getLayoutHandles( View v )
 	{
 		titleEditText = (EditText) v.findViewById( R.id.fragment_course_title );
 		creditsEditText = (EditText) v.findViewById( R.id.fragment_course_credits );
@@ -100,15 +109,21 @@ public class CourseFragment
 		switch ( id )
 		{
 		case R.layout.fragment_child_course_detail:
-			fragment = CourseDetailChildFragment.newInstance();
+            if (currentTab == R.layout.fragment_child_course_detail) return;
+            fragment = CourseDetailChildFragment.newInstance();
+            currentTab = R.layout.fragment_child_course_detail;
 			break;
 
 		case R.layout.fragment_child_course_content:
-			fragment = CourseContentChildFragment.newInstance();
+            if (currentTab == R.layout.fragment_child_course_content) return;
+            fragment = CourseContentChildFragment.newInstance(course.getContent());
+            currentTab = R.layout.fragment_child_course_content;
 			break;
 
 		case R.layout.fragment_child_course_grade:
+            if (currentTab == R.layout.fragment_child_course_grade ) return;
 			fragment = CourseGradeChildFragment.newInstance();
+            currentTab = R.layout.fragment_child_course_grade;
 			break;
 
 		default:
