@@ -16,7 +16,7 @@ public interface Gradable
 
 	public abstract float getGrade();
 
-	public abstract void setGrade( float score );
+	public abstract float getWeight();
 
 	public abstract float getMax();
 

@@ -72,7 +72,6 @@ public class SimpleGradable
 		return grade;
 	}
 
-	@Override
 	public void setGrade( float grade )
 	{
 		this.grade = grade;
