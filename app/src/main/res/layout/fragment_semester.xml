@@ -11,7 +11,7 @@
 		android:layout_height="wrap_content"
 		android:gravity="center"
 		android:hint="Title"
-		android:id="@+id/fragmentSemester_title"
+		android:id="@+id/fragment_semester_title"
 		android:textAppearance="?android:attr/textAppearanceLarge"/>
 
 

@@ -35,7 +35,9 @@ public class MainActionAdapter
 	public ViewHolder onCreateViewHolder( ViewGroup viewGroup, int i )
 	{
 		View v = LayoutInflater.from( viewGroup.getContext() )
-							   .inflate( R.layout.rvmain_actioncard, viewGroup, false );
+							   .inflate( R.layout.rvmain_actioncard,
+										 viewGroup,
+										 false );
 
 		// Setup view layout here
 
@@ -48,16 +50,18 @@ public class MainActionAdapter
 	{
 		Gradable item = mData.get( i );
 
-		viewHolder.title.setText( item.getTitle() );
+		viewHolder.title.setText( item.getLongTitle() );
 		viewHolder.subtitle.setText( item.getDesc() );
-		SimpleDateFormat dateFormat = new SimpleDateFormat( "E, LLL d @ h:mm a", Locale
-				.getDefault() );
+		SimpleDateFormat dateFormat = new SimpleDateFormat( "E, LLL d @ h:mm a",
+															Locale.getDefault() );
 		viewHolder.dueDate.setText( "Due: " + dateFormat.format( item.getDue()
 																	 .getTime() ) );
 		viewHolder.priority.setText( item.getPriority() );
-		viewHolder.itemHint.setText( "You need to ace this item to stay on budget." ); // TODO: FIX
+		viewHolder.itemHint.setText(
+				"You need to ace this item to stay on budget." ); // TODO: FIX
 		linkSeekBarToEntry( viewHolder.entrySeekBar, viewHolder.entryEditText );
-		linkButtonListeners( viewHolder.buttonBarEnter, viewHolder.buttonBarMulligan );
+		linkButtonListeners( viewHolder.buttonBarEnter,
+							 viewHolder.buttonBarMulligan );
 	}
 
 	@Override
@@ -95,7 +99,9 @@ public class MainActionAdapter
 			public void onStopTrackingTouch( SeekBar seekBar )
 			{
 				if ( newProgress >= 0 )
+				{
 					entryEditText.setText( String.valueOf( newProgress ) );
+				}
 			}
 		} );
 

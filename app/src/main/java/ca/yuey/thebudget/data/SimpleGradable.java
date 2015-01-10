@@ -10,7 +10,6 @@ import java.util.Observable;
  * Created by Yuey on 02/01/2015.
  */
 public class SimpleGradable
-		extends Observable
 		implements Gradable
 {
 	protected Course   parent   = null;
@@ -39,6 +38,12 @@ public class SimpleGradable
 
 	@Override
 	public String getTitle()
+	{
+		return title;
+	}
+
+	@Override
+	public String getLongTitle()
 	{
 		return parent.getTitle() + " " + title;
 	}

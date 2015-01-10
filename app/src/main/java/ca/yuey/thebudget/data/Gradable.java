@@ -12,6 +12,8 @@ public interface Gradable
 {
 	public abstract String getTitle();
 
+	public abstract String getLongTitle();
+
 	public abstract String getDesc();
 
 	public abstract Calendar getDue();

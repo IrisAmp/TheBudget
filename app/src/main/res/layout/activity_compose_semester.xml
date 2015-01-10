@@ -9,6 +9,7 @@
 	tools:layout="@layout/fragment_course">
 
 	<android.support.v4.view.PagerTitleStrip
+		android:id="@+id/composeSemester_titleStrip"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"/>
 

@@ -3,6 +3,7 @@ package ca.yuey.thebudget.data;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Observable;
 
 /**
  * Created by Yuey on 01/01/2015.
@@ -17,11 +18,23 @@ public class Course
 	private String                disc    = "";
 	private ArrayList< Gradable > content = new ArrayList<>();
 
+	public int getCredits()
+	{
+		return credits;
+	}
+
+	public void setCredits( int credits )
+	{
+		this.credits = credits;
+	}
+
+	private int credits;
+
 
 	public Course()
 	{
 		this.id = nextID++;
-		title = "New Course " + String.valueOf( 101 + id );
+		title = "New Course " + String.valueOf( 100 + id );
 		generateContent();
 	}
 

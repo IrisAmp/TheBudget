@@ -5,11 +5,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import java.util.ArrayList;
 
 import ca.yuey.thebudget.R;
 import ca.yuey.thebudget.application.fragment.CourseFragment;
@@ -19,13 +18,15 @@ import ca.yuey.thebudget.data.Semester;
 
 public class ComposeSemesterActivity
 		extends FragmentActivity
+		implements CourseFragment.OnDataChangedListener
 {
 	public static final String ARG_SEMESTER = "composeSemesterActivity_semester";
 
-	private PagerAdapter adapter;
-	private ViewPager    pager;
+	private PagerAdapter    adapter;
+	private ViewPager       pager;
+	private PagerTitleStrip titleStrip;
 
-	private Semester            semester = null;
+	private Semester semester = null;
 
 	@Override
 	protected void onCreate( Bundle savedInstanceState )
@@ -38,9 +39,29 @@ public class ComposeSemesterActivity
 		initPager();
 	}
 
+	private void getArgs( Bundle bundle )
+	{
+		Semester s = null;
+
+		if ( bundle != null )
+		{
+			s = (Semester) bundle.get( ARG_SEMESTER );
+		}
+
+		if ( s != null )
+		{
+			this.semester = s;
+		}
+		else
+		{
+			this.semester = new Semester();
+		}
+	}
+
 	private void getLayoutHandles()
 	{
 		pager = (ViewPager) findViewById( R.id.composeSemester_viewPager );
+		titleStrip = (PagerTitleStrip) findViewById( R.id.composeSemester_titleStrip );
 	}
 
 	private void initPager()
@@ -54,19 +75,6 @@ public class ComposeSemesterActivity
 	{
 		getMenuInflater().inflate( R.menu.menu_compose_semester, menu );
 		return true;
-	}
-
-	private void getArgs( Bundle bundle )
-	{
-		Semester s = null;
-
-		if ( bundle != null )
-		{
-			s = (Semester) bundle.get( ARG_SEMESTER );
-		}
-
-		if ( s != null ) this.semester = s;
-		else this.semester = new Semester();
 	}
 
 	@Override
@@ -87,12 +95,22 @@ public class ComposeSemesterActivity
 		}
 	}
 
+	@Override
+	public void onDataChanged()
+	{
+		adapter.notifyDataSetChanged();
+		titleStrip.invalidate();
+	}
+
 	public class PagerAdapter
 			extends FragmentStatePagerAdapter
 	{
+		Semester data;
+
 		public PagerAdapter( FragmentManager fm, Semester semester )
 		{
 			super( fm );
+			this.data = semester;
 		}
 
 		@Override
@@ -102,18 +120,19 @@ public class ComposeSemesterActivity
 
 			if ( position < 0 )
 			{
-				return SemesterFragment.newInstance( semester );
+				return SemesterFragment.newInstance( data );
 			}
 			else
 			{
-				return CourseFragment.newInstance( semester.getCourseByPosition( position ) );
+				return CourseFragment.newInstance( data.getCourseByPosition(
+						position ) );
 			}
 		}
 
 		@Override
 		public int getCount()
 		{
-			return semester.getCourses().size() + 1;
+			return data.getCourses().size() + 1;
 		}
 
 		@Override
@@ -123,11 +142,11 @@ public class ComposeSemesterActivity
 
 			if ( position < 0 )
 			{
-				return semester.getTitle();
+				return data.getTitle();
 			}
 			else
 			{
-				return semester.getCourseByPosition( position ).getTitle();
+				return data.getCourseByPosition( position ).getTitle();
 			}
 		}
 	}

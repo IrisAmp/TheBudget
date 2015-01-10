@@ -12,7 +12,6 @@ import java.util.Observable;
  * Created by Yuey on 31/12/2014.
  */
 public class Semester
-		extends Observable
 		implements Serializable
 {
 	private String                           title   = "";
@@ -33,7 +32,6 @@ public class Semester
 	public void setTitle( String title )
 	{
 		this.title = title;
-		setChanged();
 	}
 
 	public String getDisc()
@@ -44,13 +42,11 @@ public class Semester
 	public void setDisc( String disc )
 	{
 		this.disc = disc;
-		setChanged();
 	}
 
 	public void addCourse( Course course )
 	{
 		courses.put( course.id, course );
-		setChanged();
 	}
 
 	public Course getCourse( int courseID )
