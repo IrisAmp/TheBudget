@@ -1,15 +1,19 @@
 package ca.yuey.thebudget.data;
 
+import android.support.annotation.NonNull;
+
+import java.io.Serializable;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.Observable;
 
 /**
  * Created by Yuey on 02/01/2015.
  */
 public class SimpleGradable
+		extends Observable
 		implements Gradable
 {
-	protected Course   parent;
+	protected Course   parent   = null;
 	protected String   title    = "Untitled Item";
 	protected String   desc     = "";
 	protected Calendar dueDate  = Calendar.getInstance();
@@ -82,6 +86,11 @@ public class SimpleGradable
 		return maxScore;
 	}
 
+	public void setMax( float maxScore )
+	{
+		this.maxScore = maxScore;
+	}
+
 	@Override
 	public String getPriority()
 	{
@@ -91,11 +100,6 @@ public class SimpleGradable
 	public void setPriority( String priority )
 	{
 		this.priority = priority;
-	}
-
-	public void setMax( float maxScore )
-	{
-		this.maxScore = maxScore;
 	}
 
 	public float getWeight()
@@ -109,10 +113,8 @@ public class SimpleGradable
 	}
 
 	@Override
-	public int compareTo( Gradable another )
+	public int compareTo( @NonNull Gradable another )
 	{
 		return this.dueDate.compareTo( another.getDue() );
 	}
-
-
 }

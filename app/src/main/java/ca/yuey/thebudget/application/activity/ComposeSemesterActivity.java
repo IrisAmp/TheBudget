@@ -11,26 +11,29 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 
-import ca.yuey.thebudget.application.fragment.CourseFragment;
 import ca.yuey.thebudget.R;
+import ca.yuey.thebudget.application.fragment.CourseFragment;
 import ca.yuey.thebudget.application.fragment.SemesterFragment;
 import ca.yuey.thebudget.data.Course;
 import ca.yuey.thebudget.data.Semester;
 
 public class ComposeSemesterActivity
-	extends FragmentActivity
+		extends FragmentActivity
 {
+	public static final String ARG_SEMESTER = "composeSemesterActivity_semester";
+
 	private PagerAdapter adapter;
 	private ViewPager    pager;
 
-	private Semester            semester = new Semester();
-	private ArrayList< Course > courses  = new ArrayList<>();
+	private Semester            semester = null;
 
 	@Override
 	protected void onCreate( Bundle savedInstanceState )
 	{
 		super.onCreate( savedInstanceState );
 		setContentView( R.layout.activity_compose_semester );
+
+		getArgs( savedInstanceState );
 		getLayoutHandles();
 		initPager();
 	}
@@ -42,7 +45,7 @@ public class ComposeSemesterActivity
 
 	private void initPager()
 	{
-		adapter = new PagerAdapter( getSupportFragmentManager(), semester, courses );
+		adapter = new PagerAdapter( getSupportFragmentManager(), semester );
 		pager.setAdapter( adapter );
 	}
 
@@ -53,13 +56,26 @@ public class ComposeSemesterActivity
 		return true;
 	}
 
+	private void getArgs( Bundle bundle )
+	{
+		Semester s = null;
+
+		if ( bundle != null )
+		{
+			s = (Semester) bundle.get( ARG_SEMESTER );
+		}
+
+		if ( s != null ) this.semester = s;
+		else this.semester = new Semester();
+	}
+
 	@Override
 	public boolean onOptionsItemSelected( MenuItem item )
 	{
 		switch ( item.getItemId() )
 		{
 		case R.id.action_addCourse:
-			courses.add( new Course() );
+			semester.addCourse( new Course() );
 			adapter.notifyDataSetChanged();
 			return true;
 
@@ -72,9 +88,9 @@ public class ComposeSemesterActivity
 	}
 
 	public class PagerAdapter
-		extends FragmentStatePagerAdapter
+			extends FragmentStatePagerAdapter
 	{
-		public PagerAdapter( FragmentManager fm, Semester semester, ArrayList< Course > courses )
+		public PagerAdapter( FragmentManager fm, Semester semester )
 		{
 			super( fm );
 		}
@@ -84,14 +100,20 @@ public class ComposeSemesterActivity
 		{
 			position -= 1;
 
-			if ( position < 0 ) return SemesterFragment.newInstance( semester );
-			else                return CourseFragment.newInstance( courses.get( position ) );
+			if ( position < 0 )
+			{
+				return SemesterFragment.newInstance( semester );
+			}
+			else
+			{
+				return CourseFragment.newInstance( semester.getCourseByPosition( position ) );
+			}
 		}
 
 		@Override
 		public int getCount()
 		{
-			return courses.size() + 1;
+			return semester.getCourses().size() + 1;
 		}
 
 		@Override
@@ -99,8 +121,14 @@ public class ComposeSemesterActivity
 		{
 			position -= 1;
 
-			if ( position < 0 ) return semester.getTitle();
-			else                return courses.get( position ).getTitle();
+			if ( position < 0 )
+			{
+				return semester.getTitle();
+			}
+			else
+			{
+				return semester.getCourseByPosition( position ).getTitle();
+			}
 		}
 	}
 }

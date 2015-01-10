@@ -1,21 +1,27 @@
 package ca.yuey.thebudget.data;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.Collection;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.Observable;
 
 /**
  * Created by Yuey on 31/12/2014.
  */
 public class Semester
+		extends Observable
+		implements Serializable
 {
-	private String                          title   = "";
-	private String                          disc    = "";
-	private LinkedHashMap< String, Course > courses = new LinkedHashMap<>();
+	private String                           title   = "";
+	private String                           disc    = "";
+	private LinkedHashMap< Integer, Course > courses = new LinkedHashMap<>();
 
 	public Semester()
 	{
-        SimpleDateFormat df = new SimpleDateFormat("MMMMM yyyy");
+		SimpleDateFormat df = new SimpleDateFormat( "MMMM yyyy" );
 		title = df.format( new Date() ) + " Semester";
 	}
 
@@ -27,6 +33,7 @@ public class Semester
 	public void setTitle( String title )
 	{
 		this.title = title;
+		setChanged();
 	}
 
 	public String getDisc()
@@ -37,15 +44,38 @@ public class Semester
 	public void setDisc( String disc )
 	{
 		this.disc = disc;
+		setChanged();
 	}
 
 	public void addCourse( Course course )
 	{
-		courses.put( course.getTitle(), course );
+		courses.put( course.id, course );
+		setChanged();
 	}
 
-	public Course getCourse( String title )
+	public Course getCourse( int courseID )
 	{
-		return courses.get( title );
+		return courses.get( courseID );
+	}
+
+	public Course getCourseByPosition( int position )
+	{
+		if ( position < 0 || position >= courses.size() )
+		{
+			throw new ArrayIndexOutOfBoundsException();
+		}
+
+		Iterator< Course > it = courses.values().iterator();
+		for ( int i = 0; i < position; i++ )
+		{
+			it.next();
+		}
+
+		return it.next();
+	}
+
+	public Collection< Course > getCourses()
+	{
+		return this.courses.values();
 	}
 }
