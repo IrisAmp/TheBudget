@@ -30,7 +30,7 @@ public class CourseContentArrayAdapter
 	private List< Gradable > data;
 
 	private SimpleDateFormat dateFmt = new SimpleDateFormat( "EEE MMM d" );
-	private SimpleDateFormat timeFmt = new SimpleDateFormat( "h:mm a" );
+	private SimpleDateFormat timeFmt = new SimpleDateFormat( "h:mm aa" );
 
 	public CourseContentArrayAdapter( Activity activity, List< Gradable > objects )
 	{
