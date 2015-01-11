@@ -6,7 +6,6 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.Observable;
 
 /**
  * Created by Yuey on 31/12/2014.
@@ -14,6 +13,8 @@ import java.util.Observable;
 public class Semester
 		implements Serializable
 {
+
+
 	private String                           title   = "";
 	private String                           disc    = "";
 	private LinkedHashMap< Integer, Course > courses = new LinkedHashMap<>();

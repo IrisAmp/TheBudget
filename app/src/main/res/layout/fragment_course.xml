@@ -9,9 +9,9 @@
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:paddingTop="@dimen/activity_padding_less"
 		android:paddingLeft="@dimen/activity_padding_less"
-		android:paddingRight="@dimen/activity_padding_less">
+		android:paddingRight="@dimen/activity_padding_less"
+		android:paddingTop="@dimen/activity_padding_less">
 
 		<EditText
 			android:layout_width="0dp"
@@ -21,8 +21,8 @@
 			android:hint="New Course 101"
 			android:id="@+id/fragment_course_title"
 			android:inputType="text|textCapWords|textAutoCorrect"
-			android:textAppearance="?android:attr/textAppearanceLarge"
-			android:nextFocusForward="@+id/fragment_course_credits"/>
+			android:nextFocusForward="@+id/fragment_course_credits"
+			android:textAppearance="?android:attr/textAppearanceLarge"/>
 
 		<EditText
 			android:layout_width="0dp"
@@ -40,6 +40,7 @@
 	<LinearLayout
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
+		android:elevation="@dimen/activity_elevation"
 		android:orientation="horizontal">
 
 		<Button
@@ -87,11 +88,12 @@
 		android:background="@android:color/darker_gray"/>
 
 	<FrameLayout
-		android:id="@+id/fragment_course_frame"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
+		android:layout_height="match_parent"
+		android:elevation="0dp"
+		android:id="@+id/fragment_course_frame">
 
 
-    </FrameLayout>
+	</FrameLayout>
 
 </LinearLayout>

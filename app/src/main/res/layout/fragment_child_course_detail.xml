@@ -1,20 +1,20 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-			android:layout_height="match_parent"
 			android:layout_width="match_parent"
-			android:padding="@dimen/activity_padding_less">
+			android:layout_height="match_parent">
 
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:orientation="vertical">
+		android:orientation="vertical"
+		android:padding="@dimen/activity_padding">
 
 		<EditText
-			android:id="@+id/fragment_courseDetail_description"
-			android:layout_margin="@dimen/activity_margin_less"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:inputType="text|textAutoCorrect|textCapSentences"
-			android:hint="Enter a description..."/>
+			android:layout_margin="@dimen/activity_margin_less"
+			android:hint="Enter a description..."
+			android:id="@+id/fragment_courseDetail_description"
+			android:inputType="text|textAutoCorrect|textCapSentences"/>
 
 		<LinearLayout
 			android:layout_width="match_parent"
@@ -24,17 +24,17 @@
 			<TextView
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:layout_weight="2"
-				android:text="Course is Pass / Fail"
 				android:layout_gravity="center"
-				android:padding="@dimen/activity_padding_less"/>
+				android:layout_weight="2"
+				android:padding="@dimen/activity_padding_less"
+				android:text="Course is Pass / Fail"/>
 
 			<ToggleButton
-				android:id="@+id/fragment_courseDetail_passFailButton"
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
-				android:checked="false"/>
+				android:checked="false"
+				android:id="@+id/fragment_courseDetail_passFailButton"/>
 
 		</LinearLayout>
 
@@ -46,16 +46,16 @@
 			<TextView
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:layout_weight="2"
-				android:text="Target grade"
 				android:layout_gravity="center"
-				android:padding="@dimen/activity_padding_less"/>
+				android:layout_weight="2"
+				android:padding="@dimen/activity_padding_less"
+				android:text="Target grade"/>
 
 			<Spinner
-				android:id="@+id/fragment_courseDetail_targetGradeSpinner"
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:layout_weight="1"/>
+				android:layout_weight="1"
+				android:id="@+id/fragment_courseDetail_targetGradeSpinner"/>
 
 		</LinearLayout>
 
@@ -67,18 +67,37 @@
 			<TextView
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:layout_weight="2"
-				android:text="Priority"
 				android:layout_gravity="center"
-				android:padding="@dimen/activity_padding_less"/>
+				android:layout_weight="2"
+				android:padding="@dimen/activity_padding_less"
+				android:text="Priority"/>
 
 			<Spinner
-				android:id="@+id/fragment_courseDetail_prioritySpinner"
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:layout_weight="1"/>
+				android:layout_weight="1"
+				android:id="@+id/fragment_courseDetail_prioritySpinner"/>
 
 		</LinearLayout>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="@android:color/darker_gray"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:padding="@dimen/activity_padding_less"
+			android:text="Course at a Glance"
+			android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/fragment_courseDetail_itemsPreviewLinearLayout"
+			android:orientation="vertical"/>
 
 	</LinearLayout>
 

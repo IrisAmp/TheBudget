@@ -29,7 +29,7 @@ public class SemesterFragment
 	{
 		SemesterFragment result = new SemesterFragment();
 
-		Bundle args = new Bundle(  );
+		Bundle args = new Bundle();
 		args.putSerializable( ARG_SEMESTER, semester );
 		result.setArguments( args );
 
@@ -40,7 +40,7 @@ public class SemesterFragment
 	public void onCreate( Bundle savedInstanceState )
 	{
 		super.onCreate( savedInstanceState );
-		if (getArguments() != null)
+		if ( getArguments() != null )
 		{
 			semester = (Semester) getArguments().getSerializable( ARG_SEMESTER );
 		}
@@ -59,8 +59,14 @@ public class SemesterFragment
 		return resultView;
 	}
 
+	private void getLayoutHandles( View v )
+	{
+		title = (EditText) v.findViewById( R.id.fragment_semester_title );
+	}
+
 	private void setupEditTexts()
 	{
+		title.setText( semester.getTitle() );
 		title.addTextChangedListener( new TextWatcher()
 		{
 			@Override
@@ -81,10 +87,5 @@ public class SemesterFragment
 				semester.setTitle( s.toString() );
 			}
 		} );
-	}
-
-	private void getLayoutHandles( View v )
-	{
-		title = (EditText) v.findViewById( R.id.fragment_semester_title );
 	}
 }

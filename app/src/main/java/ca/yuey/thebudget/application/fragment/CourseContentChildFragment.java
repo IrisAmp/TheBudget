@@ -1,9 +1,7 @@
 package ca.yuey.thebudget.application.fragment;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +16,7 @@ import ca.yuey.thebudget.data.Gradable;
 public class CourseContentChildFragment
 		extends BaseChildFragment
 {
-	private Context ctx;
+	private Activity activity;
 
 	private ListView         itemsListView;
 	private List< Gradable > data;
@@ -39,7 +37,7 @@ public class CourseContentChildFragment
 	public void onAttach( Activity activity )
 	{
 		super.onAttach( activity );
-		this.ctx = activity;
+		this.activity = activity;
 	}
 
 	@Override
@@ -53,8 +51,8 @@ public class CourseContentChildFragment
 	{
 		// Inflate the layout for this fragment
 		View v = inflater.inflate( R.layout.fragment_child_course_content,
-									container,
-									false );
+								   container,
+								   false );
 
 		itemsListView = (ListView) v.findViewById( R.id.fragment_courseContent_listView );
 		setupListView();
@@ -64,7 +62,9 @@ public class CourseContentChildFragment
 
 	private void setupListView()
 	{
-		CourseContentArrayAdapter adapter = new CourseContentArrayAdapter( ctx, data );
+		CourseContentArrayAdapter adapter = new CourseContentArrayAdapter(
+				activity,
+				data );
 		itemsListView.setAdapter( adapter );
 	}
 
@@ -72,6 +72,6 @@ public class CourseContentChildFragment
 	public void onDetach()
 	{
 		super.onDetach();
-		this.ctx = null;
+		this.activity = null;
 	}
 }

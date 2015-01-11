@@ -10,8 +10,8 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 
-import ca.yuey.thebudget.application.adapter.MainActionAdapter;
 import ca.yuey.thebudget.R;
+import ca.yuey.thebudget.application.adapter.MainActionAdapter;
 import ca.yuey.thebudget.data.Course;
 import ca.yuey.thebudget.data.Gradable;
 import ca.yuey.thebudget.data.SimpleGradable;

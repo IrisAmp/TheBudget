@@ -22,9 +22,9 @@
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_gravity="center"
-				android:gravity="center"
 				android:layout_margin="@dimen/activity_margin_less"
 				android:layout_weight="1"
+				android:gravity="center"
 				android:hint="Name"
 				android:id="@+id/listitem_courseContent_title"
 				android:textAppearance="?android:attr/textAppearanceLarge"/>
@@ -33,21 +33,21 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_gravity="center"
-				android:padding="@dimen/activity_padding"
 				android:layout_weight="0"
 				android:background="?android:attr/selectableItemBackground"
 				android:id="@+id/listitem_courseContent_removeButton"
+				android:padding="@dimen/activity_padding"
 				android:src="@drawable/ic_trash_dark"/>
 
 		</LinearLayout>
 
 		<EditText
-			android:id="@+id/listitem_courseContent_description"
-			android:layout_margin="@dimen/activity_margin_less"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:inputType="text|textAutoCorrect|textCapSentences"
-			android:hint="Enter a description..."/>
+			android:layout_margin="@dimen/activity_margin_less"
+			android:hint="Enter a description..."
+			android:id="@+id/listitem_courseContent_description"
+			android:inputType="text|textAutoCorrect|textCapSentences"/>
 
 		<LinearLayout
 			android:layout_width="match_parent"
@@ -58,8 +58,8 @@
 			<TextView
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:layout_weight="2"
 				android:layout_gravity="center"
+				android:layout_weight="2"
 				android:paddingLeft="@dimen/activity_padding"
 				android:paddingRight="@dimen/activity_padding"
 				android:text="Max points"
@@ -68,11 +68,11 @@
 			<EditText
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:inputType="number"
-				android:id="@+id/listitem_courseContent_maxPoints"
 				android:layout_weight="1"
 				android:gravity="center"
-				android:hint="20"/>
+				android:hint="20"
+				android:id="@+id/listitem_courseContent_maxPoints"
+				android:inputType="number"/>
 
 		</LinearLayout>
 
@@ -85,8 +85,8 @@
 			<TextView
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:layout_weight="2"
 				android:layout_gravity="center"
+				android:layout_weight="2"
 				android:paddingLeft="@dimen/activity_padding"
 				android:paddingRight="@dimen/activity_padding"
 				android:text="Weight"
@@ -95,11 +95,11 @@
 			<EditText
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:inputType="numberDecimal"
-				android:id="@+id/listitem_coursecontent_weight"
 				android:layout_weight="1"
 				android:gravity="center"
-				android:hint="0.50"/>
+				android:hint="0.50"
+				android:id="@+id/listitem_coursecontent_weight"
+				android:inputType="numberDecimal"/>
 
 		</LinearLayout>
 
@@ -120,20 +120,20 @@
 			<EditText
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:inputType="date"
-				android:id="@+id/listitem_coursecontent_date"
 				android:layout_weight="1"
 				android:gravity="center"
-				android:hint="Thrs Jan 1, 1970"/>
+				android:hint="Thrs Jan 1, 1970"
+				android:id="@+id/listitem_coursecontent_date"
+				android:inputType="date"/>
 
 			<EditText
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:inputType="time"
-				android:id="@+id/listitem_coursecontent_time"
 				android:layout_weight="1"
 				android:gravity="center"
-				android:hint="12:00 AM"/>
+				android:hint="12:00 AM"
+				android:id="@+id/listitem_coursecontent_time"
+				android:inputType="time"/>
 
 		</LinearLayout>
 

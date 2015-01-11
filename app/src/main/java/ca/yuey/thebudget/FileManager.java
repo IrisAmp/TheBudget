@@ -15,63 +15,64 @@ import java.io.Serializable;
  */
 public class FileManager
 {
-    Context appContext;
-    Uri filePath;
+	Context appContext;
+	Uri     filePath;
 
-    public FileManager( Context ctx )
-    {
-        appContext = ctx.getApplicationContext();
-        filePath = Uri.fromFile( ctx.getFilesDir() );
-    }
+	public FileManager( Context ctx )
+	{
+		appContext = ctx.getApplicationContext();
+		filePath = Uri.fromFile( ctx.getFilesDir() );
+	}
 
-    public void saveObject(Serializable saveMe, String filename)
-    {
-        FileOutputStream fos = null;
-        ObjectOutputStream oos = null;
+	public void saveObject( Serializable saveMe, String filename )
+	{
+		FileOutputStream fos = null;
+		ObjectOutputStream oos = null;
 
-        try
-        {
-            fos = new FileOutputStream( filePath.getPath() + filename );
-            oos = new ObjectOutputStream( fos );
+		try
+		{
+			fos = new FileOutputStream( filePath.getPath() + filename );
+			oos = new ObjectOutputStream( fos );
 
-            oos.writeObject( saveMe );
+			oos.writeObject( saveMe );
 
-            oos.close();
-            fos.close();
-        }
-        catch (Exception e)
-        {
-            handleError( e );
-        }
-    }
+			oos.close();
+			fos.close();
+		}
+		catch ( Exception e )
+		{
+			handleError( e );
+		}
+	}
 
-    public Object loadObject(String filename)
-    {
-        Object result = null;
+	private void handleError( Exception e )
+	{
+		Log.e( "ca.yuey.thebudget.Auxiliary.FileManager.handleError",
+			   "File IO failed: " + e.getMessage() );
+	}
 
-        FileInputStream fis;
-        ObjectInputStream ois;
+	public Object loadObject( String filename )
+	{
+		Object result = null;
 
-        try
-        {
-            fis = new FileInputStream( filePath.getPath() + filename );
-            ois = new ObjectInputStream( fis );
+		FileInputStream fis;
+		ObjectInputStream ois;
 
-            result =  ois.readObject();
+		try
+		{
+			fis = new FileInputStream( filePath.getPath() + filename );
+			ois = new ObjectInputStream( fis );
 
-            ois.close();
-            fis.close();
-        }
-        catch (Exception e)
-        {
-            handleError( e );
-        }
+			result = ois.readObject();
 
-        return result;
-    }
+			ois.close();
+			fis.close();
+		}
+		catch ( Exception e )
+		{
+			handleError( e );
+		}
 
-    private void handleError(Exception e)
-    {
-        Log.e( "ca.yuey.thebudget.Auxiliary.FileManager.handleError", "File IO failed: " + e.getMessage() );
-    }
+		return result;
+	}
 }

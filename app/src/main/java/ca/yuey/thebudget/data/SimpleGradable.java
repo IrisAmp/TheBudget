@@ -2,9 +2,7 @@ package ca.yuey.thebudget.data;
 
 import android.support.annotation.NonNull;
 
-import java.io.Serializable;
 import java.util.Calendar;
-import java.util.Observable;
 
 /**
  * Created by Yuey on 02/01/2015.
@@ -37,17 +35,31 @@ public class SimpleGradable
 	}
 
 	@Override
+	public int compareTo( @NonNull Gradable another )
+	{
+		int result;
+
+		result = this.dueDate.compareTo( another.getDue() );
+
+		if ( result == 0 )
+		{
+			result = this.priority.compareTo( another.getPriority() );
+		}
+
+		return result;
+	}	@Override
 	public String getTitle()
 	{
-		return title;
+		return this.title;
 	}
 
 	@Override
 	public String getLongTitle()
 	{
-		return parent.getTitle() + " " + title;
+		return parent.getTitle() + " " + getTitle();
 	}
 
+	@Override
 	public void setTitle( String title )
 	{
 		this.title = title;
@@ -56,9 +68,10 @@ public class SimpleGradable
 	@Override
 	public String getDesc()
 	{
-		return desc;
+		return this.desc;
 	}
 
+	@Override
 	public void setDesc( String desc )
 	{
 		this.desc = desc;
@@ -67,59 +80,62 @@ public class SimpleGradable
 	@Override
 	public Calendar getDue()
 	{
-		return dueDate;
+		return this.dueDate;
 	}
 
-	public void setDue( Calendar dueDate )
+	@Override
+	public void setDue( Calendar due )
 	{
-		this.dueDate = dueDate;
+		this.dueDate = due;
 	}
 
 	@Override
 	public float getGrade()
 	{
-		return grade;
+		return this.grade;
 	}
 
+	@Override
 	public void setGrade( float grade )
 	{
 		this.grade = grade;
 	}
 
-	public float getMax()
+	@Override
+	public float getWeight()
 	{
-		return maxScore;
-	}
-
-	public void setMax( float maxScore )
-	{
-		this.maxScore = maxScore;
+		return this.weight;
 	}
 
 	@Override
-	public String getPriority()
-	{
-		return priority;
-	}
-
-	public void setPriority( String priority )
-	{
-		this.priority = priority;
-	}
-
-	public float getWeight()
-	{
-		return weight;
-	}
-
 	public void setWeight( float weight )
 	{
 		this.weight = weight;
 	}
 
 	@Override
-	public int compareTo( @NonNull Gradable another )
+	public float getMax()
 	{
-		return this.dueDate.compareTo( another.getDue() );
+		return this.maxScore;
 	}
+
+	@Override
+	public void setMax( float max )
+	{
+		this.maxScore = max;
+	}
+
+	@Override
+	public String getPriority()
+	{
+		return this.priority;
+	}
+
+	@Override
+	public void setPriority( String priority )
+	{
+		this.priority = priority;
+	}
+
+
 }

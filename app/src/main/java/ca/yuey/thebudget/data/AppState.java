@@ -11,11 +11,16 @@ public class AppState
 
 	private Context ctx;
 
+	private AppState( Context ctx )
+	{
+		this.ctx = ctx;
+	}
+
 	public static void initState( Context context )
 	{
 		if ( instance == null )
 		{
-			instance = new AppState(context);
+			instance = new AppState( context );
 		}
 	}
 
@@ -27,10 +32,5 @@ public class AppState
 					"ca.yuey.thebudget.data.AppState has not been initialized (did you forget to call initState?)" );
 		}
 		return instance;
-	}
-
-	private AppState(Context ctx)
-	{
-		this.ctx = ctx;
 	}
 }

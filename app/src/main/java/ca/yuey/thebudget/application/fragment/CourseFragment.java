@@ -18,7 +18,6 @@ import ca.yuey.thebudget.data.Course;
 /**
  * Created by Yuey on 03/01/2015.
  */
-
 public class CourseFragment
 		extends Fragment
 {
@@ -160,7 +159,8 @@ public class CourseFragment
 	{
 		getChildFragmentManager().beginTransaction()
 								 .add( R.id.fragment_course_frame,
-									   CourseDetailChildFragment.newInstance() )
+									   CourseDetailChildFragment.newInstance(
+											   course ) )
 								 .commit();
 		currentTab = R.layout.fragment_child_course_detail;
 	}
@@ -172,28 +172,19 @@ public class CourseFragment
 		switch ( id )
 		{
 		case R.layout.fragment_child_course_detail:
-			if ( currentTab == R.layout.fragment_child_course_detail )
-			{
-				return;
-			}
-			fragment = CourseDetailChildFragment.newInstance();
+			if ( currentTab == R.layout.fragment_child_course_detail ) return;
+			fragment = CourseDetailChildFragment.newInstance( course );
 			currentTab = R.layout.fragment_child_course_detail;
 			break;
 
 		case R.layout.fragment_child_course_content:
-			if ( currentTab == R.layout.fragment_child_course_content )
-			{
-				return;
-			}
+			if ( currentTab == R.layout.fragment_child_course_content ) return;
 			fragment = CourseContentChildFragment.newInstance( course.getContent() );
 			currentTab = R.layout.fragment_child_course_content;
 			break;
 
 		case R.layout.fragment_child_course_grade:
-			if ( currentTab == R.layout.fragment_child_course_grade )
-			{
-				return;
-			}
+			if ( currentTab == R.layout.fragment_child_course_grade ) return;
 			fragment = CourseGradeChildFragment.newInstance();
 			currentTab = R.layout.fragment_child_course_grade;
 			break;

@@ -1,14 +1,15 @@
 package ca.yuey.thebudget.data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Observable;
 
 /**
  * Created by Yuey on 01/01/2015.
  */
 public class Course
+		implements Serializable
 {
 	private static int nextID = 0;
 
@@ -17,19 +18,7 @@ public class Course
 	private String                title   = "";
 	private String                disc    = "";
 	private ArrayList< Gradable > content = new ArrayList<>();
-
-	public int getCredits()
-	{
-		return credits;
-	}
-
-	public void setCredits( int credits )
-	{
-		this.credits = credits;
-	}
-
 	private int credits;
-
 
 	public Course()
 	{
@@ -67,6 +56,16 @@ public class Course
 		content.add( exam );
 		content.add( midterm );
 		content.add( assignment );
+	}
+
+	public int getCredits()
+	{
+		return credits;
+	}
+
+	public void setCredits( int credits )
+	{
+		this.credits = credits;
 	}
 
 	public String getTitle()

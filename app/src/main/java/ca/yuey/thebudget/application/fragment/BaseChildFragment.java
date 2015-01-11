@@ -2,8 +2,6 @@ package ca.yuey.thebudget.application.fragment;
 
 import android.support.v4.app.Fragment;
 
-import java.lang.reflect.Field;
-
 /**
  * Created by Yuey on 05/01/2015.
  */
