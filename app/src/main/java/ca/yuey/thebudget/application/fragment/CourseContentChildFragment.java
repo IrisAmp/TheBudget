@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.FrameLayout;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import ca.yuey.thebudget.R;
 import ca.yuey.thebudget.application.adapter.CourseContentArrayAdapter;
@@ -18,15 +18,15 @@ public class CourseContentChildFragment
 {
 	private Activity activity;
 
-	private ListView         itemsListView;
-	private List< Gradable > data;
+	private FrameLayout           currentItem;
+	private ArrayList< Gradable > data;
 
 	public CourseContentChildFragment()
 	{
 		// Required empty public constructor
 	}
 
-	public static CourseContentChildFragment newInstance( List< Gradable > content )
+	public static CourseContentChildFragment newInstance( ArrayList< Gradable > content )
 	{
 		CourseContentChildFragment fragment = new CourseContentChildFragment();
 		fragment.data = content;
@@ -54,18 +54,20 @@ public class CourseContentChildFragment
 								   container,
 								   false );
 
-		itemsListView = (ListView) v.findViewById( R.id.fragment_courseContent_listView );
-		setupListView();
+		currentItem = (FrameLayout) v.findViewById( R.id.fragment_courseContent_frame );
+		CourseContentArrayAdapter adapter = new CourseContentArrayAdapter(
+				activity,
+				data );
+
+		replaceFrameView( adapter.getView( 0, null, null ) );
 
 		return v;
 	}
 
-	private void setupListView()
+	private void replaceFrameView( View v )
 	{
-		CourseContentArrayAdapter adapter = new CourseContentArrayAdapter(
-				activity,
-				data );
-		itemsListView.setAdapter( adapter );
+		currentItem.removeAllViews();
+		currentItem.addView( v );
 	}
 
 	@Override

@@ -11,8 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 import ca.yuey.thebudget.R;
 import ca.yuey.thebudget.application.fragment.DatePickerFragment;
@@ -27,12 +27,12 @@ public class CourseContentArrayAdapter
 		implements DatePickerFragment.OnResultListener, TimePickerFragment.OnResultListener
 {
 	Activity activity = null;
-	private List< Gradable > data;
+	private ArrayList< Gradable > data;
 
 	private SimpleDateFormat dateFmt = new SimpleDateFormat( "EEE MMM d" );
 	private SimpleDateFormat timeFmt = new SimpleDateFormat( "h:mm aa" );
 
-	public CourseContentArrayAdapter( Activity activity, List< Gradable > objects )
+	public CourseContentArrayAdapter( Activity activity, ArrayList< Gradable > objects )
 	{
 		super( activity,
 			   R.layout.listitem_coursecontent,
@@ -55,6 +55,7 @@ public class CourseContentArrayAdapter
 											false );
 
 			ViewHolder holder = new ViewHolder();
+
 			holder.title = (EditText) convertView.findViewById( R.id.listitem_courseContent_title );
 			holder.description = (EditText) convertView.findViewById( R.id.listitem_courseContent_description );
 			holder.maxPoints = (EditText) convertView.findViewById( R.id.listitem_courseContent_maxPoints );
@@ -66,13 +67,7 @@ public class CourseContentArrayAdapter
 		}
 
 		ViewHolder holder = (ViewHolder) convertView.getTag();
-		initLayout( position, holder );
-		return convertView;
-	}
-
-	private void initLayout( int index, ViewHolder holder )
-	{
-		Gradable item = data.get( index );
+		Gradable item = data.get( position );
 
 		holder.title.setText( item.getTitle() );
 		//holder.description.setText( item.getDesc() );
@@ -81,8 +76,10 @@ public class CourseContentArrayAdapter
 		holder.dueDate.setText( dateFmt.format( item.getDue().getTime() ) );
 		holder.dueTime.setText( timeFmt.format( item.getDue().getTime() ) );
 
-		setupTextListeners( index, holder );
-		setupDateTimePickers( index, holder );
+		setupTextListeners( position, holder );
+		setupDateTimePickers( position, holder );
+
+		return convertView;
 	}
 
 	private void setupTextListeners( final int index, ViewHolder holder )

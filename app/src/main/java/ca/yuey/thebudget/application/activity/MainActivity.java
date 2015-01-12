@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import ca.yuey.thebudget.R;
 import ca.yuey.thebudget.application.adapter.MainActionAdapter;
+import ca.yuey.thebudget.auxiliary.AppState;
 import ca.yuey.thebudget.data.Course;
 import ca.yuey.thebudget.data.Gradable;
 import ca.yuey.thebudget.data.SimpleGradable;
@@ -23,17 +24,20 @@ public class MainActivity
 	private RecyclerView               recyclerView;
 	private MainActionAdapter          actionAdapter;
 	private RecyclerView.LayoutManager layoutManager;
-	private ArrayList< Gradable >      upcomingGradables;
+
+	private ArrayList< Gradable > upcomingGradables = new ArrayList<>();
+
+	private AppState state;
 
 	protected void onCreate( Bundle savedInstanceState )
 	{
 		super.onCreate( savedInstanceState );
 		setContentView( R.layout.activity_main );
 
+		AppState.initState( getApplicationContext() );
+		state = AppState.getAppState();
+
 		getLayoutHandles();
-
-		createMockGradables();
-
 		initRecycler();
 	}
 
@@ -75,17 +79,6 @@ public class MainActivity
 	private void getLayoutHandles()
 	{
 		recyclerView = (RecyclerView) findViewById( R.id.main_recyclerView );
-	}
-
-	private void createMockGradables()
-	{
-		upcomingGradables = new ArrayList<>();
-
-		SimpleGradable item = new SimpleGradable( new Course() );
-		item.setTitle( "Assignment 1" );
-		item.setDesc( "Mock item 1!" );
-
-		upcomingGradables.add( item );
 	}
 
 	private void initRecycler()
