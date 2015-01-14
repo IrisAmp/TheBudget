@@ -1,16 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.view.ViewPager
+<LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:id="@+id/composeSemester_viewPager"
-	android:theme="@style/AppTheme.NoABShadow"
-	tools:layout="@layout/fragment_course">
+	android:orientation="vertical">
 
-	<android.support.v4.view.PagerTitleStrip
+	<Button
+		android:id="@+id/composeSemester_button_semester"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/composeSemester_titleStrip"/>
+		android:background="?android:attr/selectableItemBackground"
+		android:text="Semester"/>
 
-</android.support.v4.view.ViewPager>
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="@android:color/darker_gray"
+		android:layout_marginLeft="@dimen/activity_margin"
+		android:layout_marginRight="@dimen/activity_margin"/>
+
+	<HorizontalScrollView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<LinearLayout
+			android:id="@+id/composeSemester_buttonBar"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center">
+
+			<Button
+				android:id="@+id/composeSemester_button_addCourse"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Add Course"
+				android:background="?android:attr/selectableItemBackground"
+				android:paddingLeft="@dimen/activity_padding"
+				android:paddingRight="@dimen/activity_padding"/>
+
+		</LinearLayout>
+
+	</HorizontalScrollView>
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="@android:color/darker_gray"/>
+
+	<FrameLayout
+		android:id="@+id/composeSemester_frame"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"/>
+
+</LinearLayout>
